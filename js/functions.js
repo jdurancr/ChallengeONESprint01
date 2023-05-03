@@ -1,6 +1,7 @@
 var frase = [];
 var fraseEncriptar = [];
 var fraseDesencritar = [];
+var incrementos = [];
 var mensaje = [];
 var bandeja, bandeja1, bandejamsg
 const vocales = ['a','e','i','o','u']; //vocale a intercabiar en las palabras ingresadas
