@@ -20,7 +20,7 @@
         <Main>
             <!--cuadro de insertar texto-->
             <section class="cuadrotexto">
-            <input type="text" placeholder="Ingrese el texto Aqui">
+            <input id="texto-ingresado" class="texto-ingresado" type="text" placeholder="Ingrese el texto Aqui">
             </section>   
             <!--area de botones-->
             <section class="seccion_bnt">
@@ -30,14 +30,19 @@
                 <div class="accion-btn">
                     <button class="btn-encriptar" type="button" value="encriptar">Encriptar</button>
                     <button class="btn-desencriptar" type="button" value="desencriptar">Desencriptar</button>
+                </div>  
+            </section>
+            <section class="resultado">
+                <textarea id="texto-salida" class="texto-salida" ></textarea>
+                <div id="ocultar" class="cuadroresultado">
+                    <img id="img-muneco" src="img/Muneco.png" alt="muneco">
+                    <h1 class="No-msg">Ningún mensaje fue encontrado</h1>
+                    <p class="ingresar-msg">Ingrese el texto que desees encriptar o desencriptar</p>
                 </div>
-
-                
+                <div>
+                    <button id="copiar" class="copiar" onclick="copiar()">Copiar</button>
+                </div>
             </section>
         </Main>
-
     </body>
-   
-
-
 </html>
