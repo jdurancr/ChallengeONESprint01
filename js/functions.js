@@ -1,9 +1,9 @@
-var frase = [];
-var fraseEncriptar = [];
-var fraseDesencritar = [];
-var incrementos = [];
-var mensaje = [];
-var bandeja, bandeja1, bandejamsg
+var frase=[];
+var fraseEncriptar=[];
+var fraseDesEncritar=[];
+var incrementos=[];
+var mensaje;
+var bandeja, bandeja1, bandejamsg;
 const vocales = ['a','e','i','o','u']; //vocale a intercabiar en las palabras ingresadas
 const llave = ["ai", "enter", "imes", "ober", "ufat"]; //ramplazo de vocales
 const abcdario = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; //letras validas
@@ -13,10 +13,10 @@ ocultarImg.style.display = 'block';
 
 //funcion que almacena el texto ingresado
 function almacenaMensaje() { 
-    frase = document.querySelector("texto-ingresado").value;   
+    frase = document.querySelector(".entradaTexto").value;   
 }
 // funcion si existe mensaje en el cuadro de texto
-function siMensaje() {
+function existeMensaje() {
     bandeja = 0;
     bandejamsg = 0;
 if (frase == '') {
@@ -37,10 +37,10 @@ if (bandeja > 0) {
 }
 
 //funcion de compobacion de caractecteres
-function ComprobarCaracteres(params) {
+function ComprobarCaracteres() {
     bandeja1 = 0;
-    for (let i = 0;i < frase.length; i++) {
-        for (let j = 0;j <abcdario.length++) {
+    for (let i = 0;i < frase.length;i++){
+        for (let j = 0;j < abcdario.length;j++){
             if(frase[i] == abcdario[j]){
                 bandeja1 = 0;
                 break;
@@ -49,7 +49,7 @@ function ComprobarCaracteres(params) {
                 bandeja1 = 1;
             }          
         }
-        if (bandeja1 ==1 ) {
+        if (bandeja1 == 1) {
             break;
         }
         
@@ -58,19 +58,20 @@ function ComprobarCaracteres(params) {
 }
 
 //funcion de salto de caracteres en desencriptar
-function incremental() {
-    for (let i = 0; i < llave.length; i++) {
+function incremental(){
+    for (let i = 0;i < llave.length; i++) {
         incrementos[i] = (llave[i].length - 1);
-        
-    }
+    }     
+}
 //funcion de encriptar mensaje
-    function encriptar() {
-        obtenerMensaje();
+    function encriptar(){
+        almacenaMensaje();
         existeMensaje();
-        comprobarMinusculas();
+        ComprobarCaracteres();
         fraseEncriptadar = [];
         let bandejaLocal;
-        if (let i = 0;i < frase.length;i++) {
+        if (bandeja1 == 0) {
+        for(let i = 0;i < frase.length;i++) {
             bandejaLocal=0;
             for(let j=0;j<vocales.length;j++){
                 if (frase[i] == vocales[j]){
@@ -83,13 +84,47 @@ function incremental() {
                 fraseEncriptar.push(frase[i]);
             }
             
-        }
+        }  
         mensajeFinal(fraseEncriptar);
     }else{
         alert("No se premite el uso de mayuscular o caracteres especiales");
         ocultar();
         document.getElementById("texto-salida").innerHTML = '';
     }
+}
+
+// funcion desencriptar
+function desEncriptar(){
+    almacenaMensaje();
+    existeMensaje();
+    ComprobarCaracteres();
+    incremental();
+    fraseDesEncriptar = [];
+    let bandejaLocal;
+    if(bandeja1 == 0){
+        for(let i = 0;i < frase.length;i++){
+            bandejaLocal = 0;
+            //
+            for(let j = 0;j < vocales.length;j++){
+                if(frase[i] == vocales[j]){
+                    fraseDesEncriptar.push(vocales[j]);
+                    bandejaLocal = 1;
+                    i += incrementos[j];
+                    break;
+                }
+            }
+            if(bandejaLocal != 1){
+                fraseDesEncriptar.push(frase[i]);
+            }
+        }
+        mensajeFinal(fraseDesEncriptar);
+    }
+    else{
+        alert("Estas usando mayusculas o caracteres especiales, intenta de nuevo");
+        ocultar();
+        document.getElementById("texto-salida").innerHTML = '';
+    }
+    
 }
 
 // funcion para Mostrar mensaje prosesado
