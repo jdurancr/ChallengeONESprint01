@@ -152,9 +152,9 @@ function mostrar() {
 }
 
 //funcion copiar texto
-function copiar() {
+function copiar(){
     let copyText = document.getElementById('texto-salida');
-    copyText.Select();
+    copyText.select();
     document.execCommand('copy');
     let textoCopiado = document.execCommand('copy');
 }
