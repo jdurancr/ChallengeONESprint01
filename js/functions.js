@@ -67,7 +67,7 @@ function crearIncremental(){
         almacenaMensaje();
         existeMensaje();
         ComprobarCaracteres();
-        fraseEncriptadar = [];
+        fraseEncriptar = [];
         let bandejaLocal;
         if (bandeja1 == 0) {
         for(let i = 0;i < frase.length;i++) {
@@ -79,7 +79,7 @@ function crearIncremental(){
                     break;
                 }
             }
-            if (bandejalocal != 1) {
+            if (bandejaLocal != 1) {
                 fraseEncriptar.push(frase[i]);
             }
             
@@ -133,7 +133,7 @@ function mensajeFinal(texto) {
     }
     //si existe mensaje
     if (bandejamsg == 0) {
-        document.getElementById("texto-salida").innerHTML = mansaje;     
+        document.getElementById("texto-salida").innerHTML = mensaje;     
     }
 }
 
