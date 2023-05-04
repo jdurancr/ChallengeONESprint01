@@ -6,9 +6,8 @@ var mensaje;
 var bandeja, bandeja1, bandejamsg;
 const vocales = ['a','e','i','o','u']; //vocale a intercabiar en las palabras ingresadas
 const llave = ["ai", "enter", "imes", "ober", "ufat"]; //ramplazo de vocales
-const abcdario = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; //letras validas
-
-var ocultarImg = document.getElementbyId('ocultar');
+const caracteres = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; //letras validas
+var ocultarImg = document.getElementById('ocultar');
 ocultarImg.style.display = 'block';
 
 //funcion que almacena el texto ingresado
@@ -40,8 +39,8 @@ if (bandeja > 0) {
 function ComprobarCaracteres() {
     bandeja1 = 0;
     for (let i = 0;i < frase.length;i++){
-        for (let j = 0;j < abcdario.length;j++){
-            if(frase[i] == abcdario[j]){
+        for (let j = 0;j < caracteres.length;j++){
+            if(frase[i] == caracteres[j]){
                 bandeja1 = 0;
                 break;
             }
@@ -58,7 +57,7 @@ function ComprobarCaracteres() {
 }
 
 //funcion de salto de caracteres en desencriptar
-function incremental(){
+function crearIncremental(){
     for (let i = 0;i < llave.length; i++) {
         incrementos[i] = (llave[i].length - 1);
     }     
@@ -74,7 +73,7 @@ function incremental(){
         for(let i = 0;i < frase.length;i++) {
             bandejaLocal=0;
             for(let j=0;j<vocales.length;j++){
-                if (frase[i] == vocales[j]){
+                if(frase[i] == vocales[j]){
                     fraseEncriptar.push(llave[j]);
                     bandejaLocal = 1;
                     break;
@@ -98,7 +97,7 @@ function desEncriptar(){
     almacenaMensaje();
     existeMensaje();
     ComprobarCaracteres();
-    incremental();
+    crearincremental();
     fraseDesEncriptar = [];
     let bandejaLocal;
     if(bandeja1 == 0){
@@ -131,7 +130,7 @@ function desEncriptar(){
 function mensajeFinal(texto) {
     mensaje = texto[0];
     for (let i = 1; i < texto.length; i++) {
-        mensaje += testo[i] = '';
+        mensaje += texto[i] + '';
     }
     //si existe mensaje
     if (bandejamsg == 0) {
@@ -140,7 +139,7 @@ function mensajeFinal(texto) {
 }
 
 // ocultar al boton copiar
-function ocultr(){
+function ocultar(){
     if (ocultarImg.style.display === 'none') {
         ocultarImg.style.display = 'block';
     }

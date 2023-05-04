@@ -17,25 +17,24 @@
                 </div>
             </header>
         </div>
-        <Main>
+        <main>
             <!--cuadro de insertar texto-->
             <section class="cuadrotexto">
-            <input id="entradaTexto" class="entradaTexto" type="text" placeholder="Ingrese el texto Aqui">
-            </section>   
+                <textarea id="entradaTexto" class="entradaTexto" type="text" placeholder="Ingrese el texto Aqui" autofocus></textarea>                      
             <!--area de botones-->
-            <section class="seccion_bnt">
-                <div class="alerta">
-                    <img src="img/Frame 1.png" alt="alerta">
-                </div>
-                <div class="accion-btn">
-                    <button class="btn-encriptar" type="button"  onclick="encriptar()">Encriptar</button>
-                    <button class="btn-desencriptar" type="button" onclick="desEncriptar()">Desencriptar</button>
-                </div>  
+                    <div class="alerta">
+                        <img src="img/Frame 1.png" alt="alerta">
+                    </div>
+                    <div class="accion-btn">
+                        <button class="btn-encriptar" onclick="encriptar()">Encriptar</button>
+                        <button class="btn-desencriptar" onclick="desEncriptar()">Desencriptar</button>
+                    </div>  
             </section>
+
             <section class="salida">
                 <textarea id="texto-salida" class="texto-salida" ></textarea>
-                <div id="ocultar" class="cuadroresultado">
-                    <img id="img-muneco" class="img-muneco" src="img/Muneco.png" alt="muneco">
+                <div id="ocultar">
+                    <img class="img-muneco" src="img/Muneco.png">
                     <h1 class="No-msg">Ningún mensaje fue encontrado</h1>
                     <p class="ingresar-msg">Ingrese el texto que desees encriptar o desencriptar</p>
                     <p class="rectangulo"></p>
@@ -44,7 +43,7 @@
                     <button id="copiar" class="copiar" onclick="copiar()">Copiar</button>
                 </div>
             </section>
-        </Main>
+        </main>
 
         <script src="js/functions.js" ></script>
     </body>
