@@ -71,7 +71,7 @@ function crearIncremental(){
         let bandejaLocal;
         if (bandeja1 == 0) {
         for(let i = 0;i < frase.length;i++) {
-            bandejaLocal=0;
+            bandejaLocal = 0;
             for(let j=0;j<vocales.length;j++){
                 if(frase[i] == vocales[j]){
                     fraseEncriptar.push(llave[j]);
@@ -97,14 +97,13 @@ function desEncriptar(){
     almacenaMensaje();
     existeMensaje();
     ComprobarCaracteres();
-    crearincremental();
+    crearIncremental();
     fraseDesEncriptar = [];
     let bandejaLocal;
     if(bandeja1 == 0){
         for(let i = 0;i < frase.length;i++){
             bandejaLocal = 0;
-            //
-            for(let j = 0;j < vocales.length;j++){
+            for(let j=0;j < vocales.length;j++){
                 if(frase[i] == vocales[j]){
                     fraseDesEncriptar.push(vocales[j]);
                     bandejaLocal = 1;

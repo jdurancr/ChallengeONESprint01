@@ -1,9 +1,12 @@
 
-
-.container{
+*{
     background: #F3F5FC;
-    position: absolute;
-}
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+  }
+
 /* logo */
 .logo{
     display: flex;
@@ -29,23 +32,23 @@ main{
 
 /* cuador de texto */
 .cuadrotexto{
-    position: absolute;
-    width: 577px;
-    height: 48px;
-    left: 240px;
-    top: 168px;
-    
+    margin-right: 60px;
 }
+
 .entradaTexto{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
     line-height: 150%;
+    margin-top: 90px;
     text-align: center;
     color: #0A3871;
     border-color:  #0A3871;
 }
+::placeholder{
+    color: #0A3871;
+  }
 
 .entradaTexto:focus{
     outline: none;
@@ -53,13 +56,10 @@ main{
 
 /* botones */
 .alerta img{
-    display: flex;
-    position: absolute;
     width: 300px;
     height: 30px;
     left: 45px;
     scale: 80%;
-    
 }
 .seccion_bnt{
     display: flex;
@@ -91,7 +91,7 @@ main{
     cursor: pointer;
     height: 65px;
     width: 328px;
-    left: 240px;
+    left: 100 px;
 }
 .btn-desencriptar{
     background: white;
